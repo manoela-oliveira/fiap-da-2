@@ -1,42 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de Consumo de Energia Elétrica</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <main class="container">
-        <h1>Calculadora de Consumo de Energia</h1>
-        
-        <form id="calculator-form">
-            <div class="input-group">
-                <label for="potencia">Potência do equipamento (W):</label>
-                <input type="number" id="potencia" min="1" placeholder="Ex: 1000" required>
-            </div>
-
-            <div class="input-group">
-                <label for="horas">Horas de utilização por dia:</label>
-                <input type="number" id="horas" min="0.1" max="24" step="0.1" placeholder="Ex: 2" required>
-            </div>
-
-            <div class="input-group">
-                <label for="dias">Dias de utilização no mês:</label>
-                <input type="number" id="dias" min="1" max="31" placeholder="Ex: 30" required>
-            </div>
-
-            <div class="button-group">
-                <button type="button" id="btn-calcular">CALCULAR</button>
-                <button type="button" id="btn-limpar">LIMPAR</button>
-            </div>
-        </form>
-
-        <section id="resultado" class="resultado-container hidden">
-        </section>
-    </main>
-
-    <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora de IMC</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
