@@ -51,7 +51,7 @@ export default function App() {
     const imc = pesoNum / (alturaNum * alturaNum);
     const infoClassificacao = classificarIMC(imc);
 
-    // Nova funcionalidade: cálculo do peso ideal para a altura
+    // Cálculo do peso ideal conforme altura
     const pesoMinIdeal = (18.5 * (alturaNum * alturaNum)).toFixed(1);
     const pesoMaxIdeal = (24.9 * (alturaNum * alturaNum)).toFixed(1);
 
@@ -88,7 +88,7 @@ export default function App() {
             id="peso"
             value={peso}
             onChange={(e) => setPeso(e.target.value)}
-            placeholder="Ex: 70.5"
+            placeholder="Ex: 54.5"
             required
           />
         </div>
@@ -100,7 +100,7 @@ export default function App() {
             id="altura"
             value={altura}
             onChange={(e) => setAltura(e.target.value)}
-            placeholder="Ex: 1.75"
+            placeholder="Ex: 1.68"
             required
           />
         </div>
@@ -111,14 +111,14 @@ export default function App() {
         </div>
       </form>
 
-      {/* Exibição de Erro */}
+      {/* Mensagem de Erro */}
       {erro && (
         <section className="resultado-container erro-validacao">
           <p>{erro}</p>
         </section>
       )}
 
-      {/* Exibição do Resultado */}
+      {/* Resultado */}
       {resultado && (
         <section className={`resultado-container ${resultado.classe}`}>
           <p>Seu IMC: <strong>{resultado.imc}</strong></p>
@@ -129,7 +129,7 @@ export default function App() {
         </section>
       )}
 
-      {/* Histórico Recente (Nova Funcionalidade) */}
+      {/* Histórico*/}
       {historico.length > 0 && (
         <div className="historico-container">
           <h3>Histórico Recente</h3>
