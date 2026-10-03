@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Monitora | Monitoramento Ambiental</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <span class="logo">
+                <img src="./assets/logo-bio-monitora.png" alt="Logo Bio Monitora" class="logo-imagem">
+            </span>
+            <span class="parceria-tag">parceira oficial de tecnologia da <strong>Motiva</strong></span>
+        </div>
+        <p>Painel de Controle Ambiental: Monitoramento de vegetação e locais de risco</p>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <!-- Cards dos níveis de vegetação adaptados (Normal, Atenção, Risco, Crítico) -->
+        <section class="resumo-cards">
+            <div class="card-resumo verde">
+                <span class="numero-resumo" id="qtd-normal">0</span>
+                <span class="rotulo-resumo">Normal (&lt;11cm)</span>
+            </div>
+            <div class="card-resumo amarelo">
+                <span class="numero-resumo" id="qtd-atencao">0</span>
+                <span class="rotulo-resumo">Atenção (11 a 19cm)</span>
+            </div>
+            <div class="card-resumo laranja">
+                <span class="numero-resumo" id="qtd-risco">0</span>
+                <span class="rotulo-resumo">Risco (20 a 29cm)</span>
+            </div>
+            <div class="card-resumo vermelho">
+                <span class="numero-resumo" id="qtd-critico">0</span>
+                <span class="rotulo-resumo">Crítico (&ge;30cm)</span>
+            </div>
+        </section>
+
+        <!-- Seção principal -->
+        <div class="painel-principal">
+            
+            <!-- Mapa -->
+            <section class="bloco-mapa">
+                <h2>Mapeamento de áreas monitoradas</h2>
+                <p class="sub-instrucao">Selecione os marcadores ou cartões para analisar a estabilidade do solo e vegetação.</p>
+                
+                <div id="map"></div>
+
+                <!-- Alerta -->
+                <div class="alerta-geologico-container" id="container-seguranca">
+                    <div class="card-resumo risco compact">
+                        <span class="numero-resumo" id="qtd-deslizamento">0</span>
+                        <span class="rotulo-resumo">ALERTA DE RISCO</span>
+                    </div>
+                    <div class="mensagem-seguranca-box">
+                        <strong class="titulo-protocolo">PROTOCOLO DE SEGURANÇA OPERACIONAL:</strong>
+                        <p class="texto-protocolo" id="texto-seguranca">Analisando estabilidade das encostas...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Lista lateral ordenada por prioridade -->
+            <section class="bloco-lista">
+                <h2>Pontos Prioritários</h2>
+                <div class="lista-pontos" id="lista-pontos">
+                    <p class="carregando">Processando dados e ordenando prioridades...</p>
+                </div>
+            </section>
+            
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <p>&copy; 2026 Bio Monitora - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="app.js"></script>
+</body>
+</html>
