@@ -15,7 +15,6 @@ const pontosMonitorados = [
 let map;
 let markers = {};
 
-// Ajustado para os 4 níveis solicitados: Normal, Atenção, Risco e Crítico
 function classificarVegetacao(height) {
     if (height < 11) {
         return { label: "Normal", classe: "status-normal", corIcone: "#22c55e", acao: "Acompanhar crescimento", prioridade: 1 };
@@ -62,7 +61,7 @@ async function processarDadosDashboard() {
 
     let contadores = { normal: 0, atencao: 0, risco: 0, critico: 0, deslizamento: 0 };
 
-    // 1. Processamento de dados utilizando map()
+    // Processamento de dados utilizando map()
     const dadosProcessados = await Promise.all(pontosMonitorados.map(async (ponto) => {
         const clima = await obterDadosClimaticos(ponto.lat, ponto.lng);
         const statusVeg = classificarVegetacao(ponto.vegHeight);
@@ -74,10 +73,10 @@ async function processarDadosDashboard() {
         return { ...ponto, clima, statusVeg, temRiscoDeslizamento, prioridadeFinal };
     }));
 
-    // 2. Ordenação (destacando maior prioridade no topo da lista) usando sort()
+    // Ordenação (destacando maior prioridade no topo da lista) usando sort()
     dadosProcessados.sort((a, b) => b.prioridadeFinal - a.prioridadeFinal);
 
-    // 3. Iteração final para popular a UI utilizando forEach()
+    // Iteração final para popular a UI utilizando forEach()
     dadosProcessados.forEach(dado => {
         // Atualiza contadores
         if (dado.statusVeg.label === "Normal") contadores.normal++;
@@ -87,7 +86,6 @@ async function processarDadosDashboard() {
 
         if (dado.temRiscoDeslizamento) contadores.deslizamento++;
 
-        // Renderiza no front
         adicionarMarcadorMapa(dado, dado.statusVeg, dado.clima, dado.temRiscoDeslizamento);
         criarCardPonto(dado, dado.statusVeg, dado.clima, dado.temRiscoDeslizamento);
     });
