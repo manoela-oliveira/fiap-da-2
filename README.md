@@ -62,7 +62,9 @@ Desenvolvimento de uma **Calculadora de Consumo de Energia Elétrica** web utili
 
 **Demonstração da Entrega:**
 <p>
-  <img/>
+  <img width="1917" height="977" alt="Image" src="https://github.com/user-attachments/assets/c35510b0-f030-4e3b-ac9a-5ae59a60158d" />
+
+  https://github.com/user-attachments/assets/d4bbaf02-43da-46dd-a7c4-a3918b57ef72
 
 ---
 
@@ -76,7 +78,9 @@ Evolução e customização de uma **Calculadora de IMC (Índice de Massa Corpor
 
 **Demonstração da Entrega:**
 <p>
-  <img>
+  <img width="1911" height="980" alt="Image" src="https://github.com/user-attachments/assets/d6b51368-332f-4df2-a5d6-d86c91caaf29" />
+
+  https://github.com/user-attachments/assets/53a4f909-4cb6-409d-833d-289483f647b0
 
 ---
 
@@ -91,4 +95,6 @@ Evolução do sistema de **Monitoramento de Vegetação em Rodovias** para auxí
 
 **Demonstração da Entrega:**
 <p>
-  <img>
+  <img width="1896" height="1025" alt="Image" src="https://github.com/user-attachments/assets/377690ac-2ef1-4b75-8ac2-d0fc7db6cff9" />
+
+  https://github.com/user-attachments/assets/9336dde9-1c3a-4ac9-9b6f-1cd9e816dab4
