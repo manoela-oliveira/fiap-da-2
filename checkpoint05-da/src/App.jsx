@@ -35,14 +35,14 @@ export default function App() {
     }
 
     // Validações
-    if (isNaN(pesoNum) || pesoNum <= 20 || pesoNum > 400) {
-      setErro('Por favor, informe um peso válido entre 20kg e 400kg.');
+    if (isNaN(pesoNum) || pesoNum < 0.5 || pesoNum > 400) {
+      setErro('Por favor, informe um peso válido entre 0.5kg e 400kg.');
       setResultado(null);
       return;
     }
 
-    if (isNaN(alturaNum) || alturaNum <= 0.5 || alturaNum > 2.5) {
-      setErro('Por favor, informe uma altura válida (ex: 1.70).');
+    if (isNaN(alturaNum) || alturaNum < 0.5 || alturaNum > 3.0) {
+      setErro('Por favor, informe uma altura válida entre 0.5cm e 3.0');
       setResultado(null);
       return;
     }
